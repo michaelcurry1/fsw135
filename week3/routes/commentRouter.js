@@ -2,7 +2,7 @@ const express = require('express');
 
 const commentRouter = express.Router();
 
-const {v4: uuidv4}= require('uuid');
+
 //const { findOne } = require('../../week2/Inventory/BackEnd/models/inventory');
 const comment = require('../models/comment');
 

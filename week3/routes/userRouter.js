@@ -2,7 +2,7 @@ const express = require('express');
 
 const userRouter = express.Router();
 
-const {v4: uuidv4}= require('uuid');
+
 //const { findOne } = require('../../week2/Inventory/BackEnd/models/inventory');
 const User = require('../models/user');
 
