@@ -23,7 +23,7 @@ app.get("/",()=>{
     console.log("test")
 })
 app.use("/users",require('./routes/authRouter'))
-app.use('/api', expressJwt({ secret: process.env.SECRET, algorithms: ['RS256'] }))
+app.use('/api', expressJwt({ secret: process.env.SECRET, algorithms: ['HS256'] }))
 app.use("/api/issues",require('./routes/issueRouter'))
 app.use("api/comments",require('./routes/commentRouter'))
 
