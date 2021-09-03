@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import AuthForm from './AuthForm.js'
-import { UserContext } from '../context/UserProvider.js'
+import { UserContext } from './UserProvider.js'
 
 const initInputs = { username: "", password: "" }
 
@@ -26,4 +26,13 @@ export default function Auth(){
   function handleLogin(e){
     e.preventDefault()
     login(inputs)
-  }...
+  }
+
+  return (
+    <div>
+    
+      <AuthForm />
+    </div>
+  )
+
+}
