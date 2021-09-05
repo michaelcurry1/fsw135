@@ -62,7 +62,7 @@ export default function UserProvider(props) {
     function addIssue(newIssue) {
         userAxios.post('/api/Issues', newIssue)
         .then(res => {
-            setUserState(prevState = ({
+            setUserState(prevState => ({
                 ...prevState,
                 issues: [...prevState.issues, res.data]
             }))
@@ -74,7 +74,7 @@ export default function UserProvider(props) {
     function getUserIssue(newIssue) {
         userAxios.get('/api/Issues/user')
         .then(res => {
-            setUserState(prevState = ({
+            setUserState(prevState => ({
                 ...prevState,
                 issues: res.data
             }))

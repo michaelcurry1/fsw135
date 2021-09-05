@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Profile from './components/Profile'

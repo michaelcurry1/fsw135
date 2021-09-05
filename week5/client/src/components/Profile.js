@@ -1,7 +1,7 @@
-import React,{ useContex} from 'react'
+import React,{ useContext} from 'react'
 import { UserContext } from '../context/UserProvider'
-import IssueForm from 'IssueForm.js'
-import IssueList from 'IssueList.js'
+import IssueForm from './IssueForm'
+import IssueList from './IssueList'
 
 
 export default function Profile(){

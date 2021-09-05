@@ -29,10 +29,32 @@ export default function Auth(){
   }
 
   return (
-    <div>
-    
-      <AuthForm />
-    </div>
+    <div className="auth-container">
+      <h1>ROCK THE VOTE</h1>
+      { !toggle ?
+      <>
+      
+      <AuthForm
+      handleChange={handleChange}
+      handleSubmit={handleSignup}
+      inputs={inputs}
+      btnText="Sign Up"
+      />
+      <p onClick={() => setToggle(prev =>!prev)}>Already Have Account</p>
+      
+    </>
+    :
+    <>
+    <AuthForm
+    handleChange={handleChange}
+    handleSubmit={handleLogin}
+    inputs={inputs}
+    btnText="Login"
+    />
+    <p onClick={() => setToggle(prev =>!prev)}>You Are Logged In</p>
+      </>
+}
+        </div>
   )
 
 }

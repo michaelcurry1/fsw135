@@ -1,5 +1,5 @@
 import React from 'react'
-import Issues from './Issues'
+import Issue from './Issues'
 
 export default function IssueList(props){
     const {issues} = props
