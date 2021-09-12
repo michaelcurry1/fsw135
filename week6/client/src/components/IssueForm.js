@@ -2,11 +2,12 @@ import React, {useState} from 'react'
 
 const initInputs = {
     title: "",
-    description: "", 
-    imgUrl: ""
+    description: ""
+    
 }
 
-export default function IssueForm(props){
+export default function IssueForm(props) {
+
     const [inputs, setInputs] = useState(initInputs)
     const {addIssue} = props
 
@@ -17,9 +18,31 @@ export default function IssueForm(props){
             [name]: value
         }))
     }
+    
     function handleSubmit(e){
         e.preventDefault()
         addIssue(inputs)
         setInputs(initInputs)
     }
+
+    const { title, description } = inputs
+
+    return (
+        <form onSubmit={handleSubmit}>
+        <input
+        type="text"
+        value={title}
+        name="title"
+        onChange={handleChange}
+        placeholder="title"
+        />
+           <input
+            type="text"
+            value={description}
+            name="description"
+            onChange={handleChange}
+            placeholder="description"
+            />
+    </form>
+    )
 }

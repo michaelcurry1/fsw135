@@ -1,11 +1,13 @@
 import React from 'react'
+import IssueForm from './IssueForm'
 
-export default function Issue(props){
+export default function Issue(){
     return (
         <div className= 'issue'>
-            <h1>{props.title}</h1>
-            <h3>{props.description}</h3>
-            <img src={ props.imgUrl } alt= 'Issue Pic' width={300}/>
+
+
+            <IssueForm />
+
 
         </div>
     )
