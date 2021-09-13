@@ -33,7 +33,10 @@ app.use("api/comments",require('./routes/commentRouter'))
 
 app.use((err,req,res,next)=>{
     console.log(err)
-    return res.send({errorMessage:err.errorMessage})
+    if(err.name === "UnauthorizedError"){
+        res.status(err.status)
+    }
+    return res.send({errorMessage:err.message})
 })
 
 app.listen(9000, () =>{

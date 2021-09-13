@@ -1,13 +1,14 @@
 import React from 'react'
 import IssueForm from './IssueForm'
 
-export default function Issue(){
+export default function Issue(props){
+    console.log(props)
     return (
         <div className= 'issue'>
-
-
-            <IssueForm />
-
+<h1>Issues</h1>
+<br></br>
+<h1>{props.title}</h1>
+<p>{props.decription}</p>
 
         </div>
     )

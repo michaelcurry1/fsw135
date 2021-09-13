@@ -43,6 +43,7 @@ export default function IssueForm(props) {
             onChange={handleChange}
             placeholder="description"
             />
+            <button>ADD ISSUE</button>
     </form>
     )
 }
