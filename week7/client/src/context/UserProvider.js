@@ -75,7 +75,10 @@ export default function UserProvider(props) {
     }
 
     function addIssue(newIssue) {
-        userAxios.post('/api/Issues', newIssue)
+
+        console.log('newIssue: ', newIssue)
+
+        userAxios.post('/api/issues', newIssue)
         .then(res => {
             setUserState(prevState => ({
                 ...prevState,

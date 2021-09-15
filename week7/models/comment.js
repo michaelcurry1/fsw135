@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const commentSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
-        ref: "Issue",
+        ref: "User",
         required: true
     },
     issue: { 
@@ -23,7 +23,7 @@ const commentSchema = new Schema({
     },
     insert_date: {
         type: Date,
-        default: Date.now
+        default: Date.now()
     }
     })
 

@@ -19,7 +19,7 @@ commentRouter.get("/", (req, res, next) => {
 
 //create
 commentRouter.post("/", (req, res, next) => {
-    const newComment = new user(req.body)
+    const newComment = new comment(req.body)
     newComment.save((err, savedComment) => {
       if(err){
         res.status(500)

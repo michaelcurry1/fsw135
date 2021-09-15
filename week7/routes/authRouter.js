@@ -10,6 +10,10 @@ authRouter.get("/",()=>{
 })
 // Signup
 authRouter.post("/signup", (req, res, next) => {
+  if(!req.body.username || !req.body.password){
+    res.status(403)
+    return next(new Error("Provide a 'username' and 'password' "))
+  }
     User.findOne({ username: req.body.username.toLowerCase() }, (err, user) => {
       if(err){
         res.status(500)
@@ -35,6 +39,10 @@ authRouter.post("/signup", (req, res, next) => {
   
   // Login
   authRouter.post("/login", (req, res, next) => {
+    if(!req.body.username || !req.body.password){
+      res.status(403)
+      return next(new Error("Provide a 'username' and 'password' "))
+    }
     const failedLogin = 'Username or Password is Inccorrect'
     User.findOne({ username: req.body.username.toLowerCase() }, (err, user) => {
       if(err){

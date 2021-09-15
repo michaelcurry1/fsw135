@@ -29,7 +29,7 @@ app.use("/auth",require('./routes/authRouter'))
 
 app.use('/api', expressJwt({ secret: process.env.SECRET, algorithms: ['HS256'] }))
 app.use("/api/issues",require('./routes/issueRouter'))
-app.use("api/comments",require('./routes/commentRouter'))
+app.use("/api/comments",require('./routes/commentRouter'))
 
 app.use((err,req,res,next)=>{
     console.log(err)
