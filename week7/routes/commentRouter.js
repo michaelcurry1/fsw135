@@ -59,7 +59,7 @@ commentRouter.get("/", (req, res, next) => {
 
 commentRouter.put("/:commentId", (req, res, next) => {
     comment.findOneAndUpdate(
-      { _id: req.params.commentID},
+      { _id: req.params.commentId},
       req.body,
       {new: true},
       (err, updatedComment) => {
@@ -83,7 +83,7 @@ commentRouter.delete("/:commentId", (req, res, next) => {
           res.status(500)
           return next(err)
         }
-        return res.status(200).send(`Successfully deleted user ${deletedComment.title} from the database`)
+        return res.status(200).send(`Successfully deleted comment ${deletedComment.title} from the database`)
       }
     )
   })

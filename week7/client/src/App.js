@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Profile from './components/Profile'
-import Issues from './components/Issues'
+import IssueList from './components/IssueList'
 import Auth from './components/Auth'
 import './App.css';
 import { UserContext } from './context/UserProvider';
@@ -16,7 +16,7 @@ function App() {
       <Switch>
         <Route
         exact path = '/'
-        render={() => token ? <Redirect to='/Issues' /> : <Auth />}
+        render={() => token ? <Redirect to='/Profile' /> : <Auth />}
         />
         <ProtectedRoute
         path='/Profile'
@@ -26,7 +26,7 @@ function App() {
         />
         <ProtectedRoute
         path='/Issues'
-        component={Issues}
+        component={IssueList}
         redirectTo='/'
         token={token}
         

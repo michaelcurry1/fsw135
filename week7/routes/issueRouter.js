@@ -86,7 +86,7 @@ issueRouter.get("/", (req, res, next) => {
 
 //create
 issueRouter.post("/", (req, res, next) => {
-
+    req.body.user = req.user._id
     console.log('issueRouter Post')
 
     const newIssue = new issue(req.body)

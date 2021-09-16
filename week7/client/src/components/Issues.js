@@ -2,13 +2,13 @@ import React from 'react'
 import IssueForm from './IssueForm'
 
 export default function Issue(props){
-    console.log(props)
+    console.log(props,"props inside of issues")
     return (
         <div className= 'issue'>
-<h1>Issues</h1>
+
 <br></br>
 <h1>{props.title}</h1>
-<p>{props.decription}</p>
+<p>{props.description}</p>
 
         </div>
     )

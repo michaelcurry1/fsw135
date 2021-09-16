@@ -19,6 +19,7 @@ export default function UserProvider(props) {
     const [userState, setUserState] = useState(initState)
 
     function handleAuthErr(errMsg){
+        console.log(errMsg,"errMsg in Provider")
         setUserState(prevState => ({
             ...prevState,
             errMsg
@@ -43,8 +44,7 @@ export default function UserProvider(props) {
                     user,
                     token
                 }))
-            })
-            .catch (err => handleAuthErr(err.response.data.errMsg))
+            }).catch (err => handleAuthErr(err.response.data.errMsg))
     }
 
     function login(credentials) {
@@ -90,8 +90,8 @@ export default function UserProvider(props) {
     }
 
     function getUserIssue(newIssue) {
-        userAxios.get('/api/Issues/user')
-        .then(res => {
+        userAxios.get('/api/issues')
+        .then(res => {console.log(res)
             setUserState(prevState => ({
                 ...prevState,
                 issues: res.data

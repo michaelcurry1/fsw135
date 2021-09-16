@@ -29,7 +29,7 @@ export default function AuthForm(props){
             placeholder="password"
             />
             <button>{btnText}</button>
-            <p style={{backgroundColor: "#c00000", color: "#ffffff",textAlign:"center"}}>{errMsg}</p>
+            <p style={{backgroundColor: "#000000", color: "#ffffff",textAlign:"center"}}>{errMsg}</p>
           </form>
     )
 }
