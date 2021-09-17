@@ -9,6 +9,7 @@ export default function Auth(){
   const [toggle, setToggle] = useState(false)
 
   const { signup, login, errMsg, resetAuthErr } = useContext(UserContext)
+  console.log(useContext(UserContext))
   console.log(errMsg,"errMsg")
   function handleChange(e){
     const {name, value} = e.target 

@@ -53,13 +53,13 @@ authRouter.post("/signup", (req, res, next) => {
         res.status(403)
         return next(new Error('Invalid Credentials'))
       }
-      user.checkPassword(req.body.checkPassword, (err, isWatch) => {
+      user.checkPassword(req.body.checkPassword, (err, isMatch) => {
         if(err) {
           res.status(403)
           return next(new Error(failedLogin))
         }
         if(!isMatch) {
-          res,status(403)
+          res.status(403)
           return next(new Error(failedLogin))
 
         }

@@ -7,7 +7,11 @@ export default function Navbar(){
     return(
         <div className="navbar">
             { token && <Link to="/Profile">Profile</Link>}
+            <br/>
+            <br/>
             <Link to="/Issues">Issues</Link>
+            <br/>
+            <br/>
             { token && <button onClick={logout}>Logout</button>}
         </div>
     )

@@ -19,7 +19,8 @@ export default function UserProvider(props) {
     const [userState, setUserState] = useState(initState)
 
     function handleAuthErr(errMsg){
-        console.log(errMsg,"errMsg in Provider")
+        //console.log(errMsg,"errMsg in Provider")
+        console.log('handleAuthErr: ', errMsg)
         setUserState(prevState => ({
             ...prevState,
             errMsg
@@ -45,6 +46,7 @@ export default function UserProvider(props) {
                     token
                 }))
             }).catch (err => handleAuthErr(err.response.data.errMsg))
+            //}).catch (err => handleAuthErr("User exists!"))
     }
 
     function login(credentials) {
